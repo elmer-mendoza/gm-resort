@@ -231,11 +231,10 @@ h6 {
 /* services */
 .services {
   padding: 5rem 0;
-}
-.services {
   background: var(--darkGrey);
   text-align: center;
 }
+
 .services-center {
   width: 90vw;
   margin: 0 auto;
