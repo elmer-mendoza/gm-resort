@@ -4,9 +4,11 @@ import defaultImage from "../images/room-1.jpeg";
 import PropTypes from "prop-types"
 import { RoomConsumer } from '../context';
 
+
 const Room = ({room}) => {
     const {name,slug,images,price}=room
     return (
+        <>
         <article className="room">
             <div className="img-container">
                 <img src={images[0] || defaultImage} alt="single room"/>
@@ -20,6 +22,8 @@ const Room = ({room}) => {
             </div>
             <p className="room-info">{name}</p>
         </article>
+        </>
+        
     )
 }
 
