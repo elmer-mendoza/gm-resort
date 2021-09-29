@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function RoomFilter() {
+export default function RoomsFilter() {
     return (
         <div>
             Room Filter

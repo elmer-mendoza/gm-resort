@@ -1,9 +1,8 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import Room from './Room';
 
 
-export default function RoomList({rooms}) {
+export default function RoomsList({rooms}) {
     if(rooms.length===0){
         return (
             <div className="empty-search">
