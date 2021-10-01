@@ -11,7 +11,6 @@ import  Loading from './Loading';
             }
         return (
             <div>
-                Hello
                 <RoomsFilter rooms={rooms}/>
                 <RoomsList rooms={sortedRooms}/>
             </div>
