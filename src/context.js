@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
-import items from "./data"
+// import items from "./data"
+import Client from "./contentful"
 
 const RoomContext = React.createContext()
 
@@ -20,8 +21,14 @@ class RoomProvider extends Component {
         pets: false
     };
 
-    componentDidMount(){
-        let rooms = this.formatData(items);
+    //getData
+    getData=async() => {
+        try {
+            let response = await Client.getEntries({
+    content_type: "beachResortRoom"
+    });
+    console.log(response.items)
+        let rooms = this.formatData(response.items);
         let featuredRooms =rooms.filter(room=>
             room.featured===true);
         let maxPrice= Math.max(...rooms.map(item=>
@@ -37,6 +44,14 @@ class RoomProvider extends Component {
             maxPrice,
             maxSize
         })
+            }catch (error){
+                console.log(error)
+            }
+        }
+    
+
+    componentDidMount(){
+        this.getData()
     };
 
     formatData(items){
