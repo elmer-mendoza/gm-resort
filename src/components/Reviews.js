@@ -3,7 +3,7 @@ import {reviews as people} from '../data';
 import { FaChevronLeft, FaChevronRight, FaQuoteRight,FaQuoteLeft } from 'react-icons/fa';
 const Review = () => {
   const [index, setIndex] = useState(0);
-  const { name, job, image, text } = people[index];
+  const { name,image, text } = people[index];
   const checkNumber = (number) => {
     if (number > people.length - 1) {
       return 0;
@@ -61,7 +61,7 @@ const Review = () => {
         <button className='prev-btn-show' onClick={prevPerson}>
           <FaChevronLeft />
         </button>
-        <button className='next-btn' onClick={prevPerson}>
+        <button className='next-btn' onClick={nextPerson}>
            <FaChevronRight />
         </button>
        </div>
